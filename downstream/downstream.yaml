@@ -1,0 +1,53 @@
+static_resources:
+  listeners:
+  - address:
+      socket_address:
+        address: 0.0.0.0
+        port_value: 80
+    filter_chains:
+    - filters:
+      - name: envoy.http_connection_manager
+        config:
+          codec_type: auto
+          stat_prefix: ingress_http
+          route_config:
+            name: local_route
+            virtual_hosts:
+            - name: backend
+              domains:
+              - "*"
+              routes:
+              - match:
+                  prefix: "/upstreamNode"
+                route:
+                  cluster: upstreamnode
+              - match:
+                  prefix: "/downstreamGo"
+                route:
+                  cluster: downstreamgo
+          http_filters:
+          - name: envoy.router
+            config: {}
+  clusters:
+  - name: upstreamnode
+    connect_timeout: 3s
+    type: strict_dns
+    lb_policy: round_robin
+    hosts:
+    - socket_address:
+        address: 10.140.0.4
+        port_value: 49161
+  - name: downstreamgo
+    connect_timeout: 3s
+    type: strict_dns
+    lb_policy: round_robin
+    hosts:
+    - socket_address:
+        address: 127.0.0.1
+        port_value: 8080
+admin:
+  access_log_path: "/dev/null"
+  address:
+    socket_address:
+      address: 0.0.0.0
+      port_value: 8001

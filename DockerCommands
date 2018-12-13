@@ -1,0 +1,27 @@
+
+1. docker run -p 49161:80 -d envoy/upstreamnode4 (phani machine)
+   docker run -p 49161:80 -d envoy/downstreamgo4 (neelesh machine)
+
+
+2. curl -i http://$(hostname -i):49161/downstreamGo && echo ""
+   curl -i http://$(hostname -i):49161/upstreamNode && echo ""
+
+envoy/upstreamnode4 :
+    FROM envoy/upstreamnode3
+    WORKDIR /phani
+    EXPOSE 80
+    ENTRYPOINT /phani/startService.sh
+
+#!/bin/sh
+npm start &
+/usr/local/bin/envoy -c upstream.yaml --service-cluster service_upstream
+
+envoy/downstreamgo4
+    FROM envoy/downstreamgo3
+    WORKDIR /phani
+    EXPOSE 80
+    ENTRYPOINT /phani/startService.sh
+
+#!/bin/sh
+./downstreamGo &
+/usr/local/bin/envoy -c downstream.yaml --service-cluster service_downstreaam
