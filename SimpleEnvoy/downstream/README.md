@@ -30,12 +30,14 @@
 6. You can build another image based on the image created in the step 5. Using the below docker file
 
     Dockerfile:
+    
         ```
         FROM <name_of_the_image>
         WORKDIR /gotest
         EXPOSE 80
         ENTRYPOINT /gotest/startService.sh
         ```
+        
     Build the docker image 
     ```
     docker build -t GoEnvoyFinal .
