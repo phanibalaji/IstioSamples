@@ -4,4 +4,4 @@ This sample demonstrates the use of envoy proxy using two services implemented i
 
 The below diagram explains the flow
 
-![Service Interaction](https://github.com/phanibalaji/AnchorSamples/blob/master/Diagram.png)
+![Service Interaction](https://github.com/phanibalaji/AnchorSamples/blob/master/SimpleEnvoy/Diagram.png)
