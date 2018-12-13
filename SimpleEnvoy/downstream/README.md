@@ -1,4 +1,4 @@
-1. `docker pull https://hub.docker.com/r/envoyproxy/envoy/`
+* `docker pull https://hub.docker.com/r/envoyproxy/envoy/`
    This pulls envoy image which is based on Ubuntu 16.04.5 LTS. This has also envoy installed at `/usr/local/bin/envoy`
 
 2. Start the container on the above image. Login into the container
