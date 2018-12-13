@@ -27,31 +27,29 @@
    docker commit <container-id> <name_of_the_image>
    ```
 
-6. You can build another image based on the image created in the step 5. Using the below docker file
+6. You can build another image based on the image created in the step 5. Using the below contents for `Dockerfile`
+  ```
+  FROM <name_of_the_image>
+  WORKDIR /gotest
+  EXPOSE 80
+  ENTRYPOINT /gotest/startService.sh
+  ```
+  
+7. Build the Docker image
+ ```
+  docker build -t GoEnvoyFinal .
+ ```
 
-    Dockerfile:
-        ```
-        FROM <name_of_the_image>
-        WORKDIR /gotest
-        EXPOSE 80
-        ENTRYPOINT /gotest/startService.sh
-        ```
-        
-    Build the docker image 
-    ```
-    docker build -t GoEnvoyFinal .
-    ```
-
-7. Run the container with the below command
+8. Run the container with the below command
    ```
    docker run -p 49161:80 -d GoEnvoyFinal
    ```
 
-8. Test the node from the host machine
+9. Test the node from the host machine
    ```
    curl -i http://$(hostname -i):49161/downstreamGo && echo ""
    ```
-9. If you hit any WARNINGs (or) errors while starting the container like below, follow the instructions in the stackoverflow to enable the IP4 forwarding
+10. If you hit any WARNINGs (or) errors while starting the container like below, follow the instructions in the stackoverflow to enable the IP4 forwarding
    
    ```
    WARNING: IPv4 forwarding is disabled. Networking will not work.
