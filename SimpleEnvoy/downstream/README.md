@@ -13,7 +13,11 @@
    ```
 
 3. Copy the contents of the `downstreamGo.go, downstream.yaml, startService.sh` to the running container under 
-   directory say `gotest`. Compile the go program using `go build downstreamGo.go` command
+   directory say `gotest`. In the `downstream.yaml` file, the upstreamNode IP is hardcoded to `10.140.0.4`. 
+   We need to change this to actual IP of the upstreamNode service. Compile the go program using the command.
+   ```
+   go build downstreamGo.go
+   ```
 
 4. Test by running `startService.sh`
 
