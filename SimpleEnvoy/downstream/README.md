@@ -27,7 +27,7 @@
    docker commit <container-id> <name_of_the_image>
    ```
 
-* You can build another image based on the image created in the step 5. Using the below contents for `Dockerfile`
+* You can build another image based on the image created in the previous step. Using the below contents for `Dockerfile`
   ```
   FROM <name_of_the_image>
   WORKDIR /gotest
