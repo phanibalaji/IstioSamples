@@ -25,7 +25,7 @@ spec:
     spec:
       containers:
       - name: upstreamnode
-        image: phanibalaji/istio-sample-images:v1
+        image: phanibalaji/istio-sample-images:upstream-node-v1
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 8080

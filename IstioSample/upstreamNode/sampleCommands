@@ -4,8 +4,5 @@
 * Pushing / Pulling docker images
   https://ropenscilabs.github.io/r-docker-tutorial/04-Dockerhub.html
 
-
-
-
-
-
+* To list logs
+  k logs <pod_name>
