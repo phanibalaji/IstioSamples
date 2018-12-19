@@ -40,5 +40,5 @@ The steps to deploy the upstream service running in Nodejs runtime on GKE.
 8. If test is successful then tag the image and upload to the appropriate your docker hub repository.
    Mention the image location in the `upstreamNode.yaml`
    ```
-   image: phanibalaji/istio-sample-images:v1
+   image: phanibalaji/istio-sample-images:upstream-node-v1
    ```
