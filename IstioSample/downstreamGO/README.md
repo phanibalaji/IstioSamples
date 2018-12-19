@@ -4,7 +4,7 @@ The steps to deploy the downstream service running in GO runtime on GKE. This se
 
 2. The docker image is already built and uploaded to phanibalaji/istio-sample-images at https://cloud.docker.com/repository/registry-1.docker.io/phanibalaji/istio-sample-images. Otherwise, if you want to build the image by yourself go to step 6 and comeback after completing all the subsequent steps upto step 8.
 
-3. Run the below command to deploy the downstreamgo-v1 POD, associated service and detsinationRule.
+3. Run the below command to deploy the `downstreamgo-v1` POD, associated service and detsinationRule.
 ```
 kubectl apply -f downstreamGo.yaml
 ```
