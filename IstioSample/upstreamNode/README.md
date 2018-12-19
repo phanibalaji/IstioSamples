@@ -1,4 +1,4 @@
-The steps to install the upstream service running on Nodejs
+The steps to deploy the upstream service running in Nodejs runtime on GKE. 
 
 1. Create a K8S cluster along with istio-beta. Select strict-MTLS for the security.
    `https://cloud.google.com/istio/docs/istio-on-gke/installing`
@@ -38,7 +38,7 @@ The steps to install the upstream service running on Nodejs
    ```
    
 8. If test is successful then tag the image and upload to the appropriate your docker hub repository.
-   Mention the image location in the upstreamNode.yaml
+   Mention the image location in the `upstreamNode.yaml`
    ```
    image: phanibalaji/istio-sample-images:v1
    ```
