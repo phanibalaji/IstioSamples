@@ -1,0 +1,11 @@
+* Testing upstream service
+    k exec -it sleep-79cc87b6b9-4h6zr -- curl http://upstreamnode:8080/upstreamNode  
+
+* Pushing / Pulling docker images
+  https://ropenscilabs.github.io/r-docker-tutorial/04-Dockerhub.html
+
+
+
+
+
+

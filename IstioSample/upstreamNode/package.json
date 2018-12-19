@@ -1,0 +1,14 @@
+{
+  "name": "docker_web_app",
+  "version": "1.0.0",
+  "description": "Node.js on Docker",
+  "author": "Phani Madgula <phanibalaji.madgula@gmail.com>",
+  "main": "server.js",
+  "scripts": {
+    "start": "node upstreamNode.js"
+  },
+  "dependencies": {
+    "express": "^4.16.1",
+    "ip": "^1.1.5"
+  }
+}
