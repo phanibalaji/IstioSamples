@@ -9,7 +9,7 @@ The steps to deploy the downstream service running in GO runtime on GKE. This se
 kubectl apply -f downstreamGo.yaml
 ```
 
-4. Install a test POD sleep using the below command. The istio download has the sleep.yaml
+4. Install a test POD `sleep` using the below command. The istio download has the `sleep.yaml`
 ```
 kubectl -f apply samples/sleep/sleep.yaml
 ```
