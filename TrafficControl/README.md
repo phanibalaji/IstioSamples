@@ -15,13 +15,16 @@ kubectl apply -f downstreamGo.yaml
 3. Call the downstream GO service as below
 ```
 phanim-macbookpro:TrafficControl phanim$ kubectl exec -it sleep-79cc87b6b9-cxh6q -- curl http://downstreamgo:8080/downstreamGo && echo ""
+
 Defaulting container name to sleep.
 Use 'kubectl describe pod/sleep-79cc87b6b9-cxh6q -n default' to see all of the containers in this pod.
 {"Message":"Hello from Upstream Nodejs service","version":"1","Time":"2018-12-20T11:55:33.632Z","IP":"10.16.2.14"}
+
 phanim-macbookpro:TrafficControl phanim$ kubectl exec -it sleep-79cc87b6b9-cxh6q -- curl http://downstreamgo:8080/downstreamGo && echo ""
+
 Defaulting container name to sleep.
 Use 'kubectl describe pod/sleep-79cc87b6b9-cxh6q -n default' to see all of the containers in this pod.
 {"Message":"Hello from Upstream Nodejs service","version":"2","Time":"2018-12-20T11:55:36.600Z","IP":"10.16.1.12"}
 ```
-Closely 25% traffic will go to V1 and 75% will go to V2.
+Closely 25% traffic will go to V1 and 75% will go to V2 if we continuously make calls to the service 
 
