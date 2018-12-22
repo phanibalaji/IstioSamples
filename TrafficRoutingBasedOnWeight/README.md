@@ -28,3 +28,8 @@ Use 'kubectl describe pod/sleep-79cc87b6b9-cxh6q -n default' to see all of the c
 ```
 Closely 25% traffic will go to V1 and 75% will go to V2 if we continuously make calls to the service 
 
+4. We can directly call upstream node service and observe the weight based traffic routing. 
+```
+kubectl exec -it sleep-79cc87b6b9-cxh6q -- curl http://upstreamnode:8080/upstreamnode && echo ""
+```
+
