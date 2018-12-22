@@ -32,4 +32,6 @@ Closely 25% traffic will go to V1 and 75% will go to V2 if we continuously make 
 ```
 kubectl exec -it sleep-79cc87b6b9-cxh6q -- curl http://upstreamnode:8080/upstreamnode && echo ""
 ```
+5. The information about wights gets propogated across the ISTIO proxies running in various pods. So, the weighted behavior 
+is observed consistently when we call the `upstreamnode` directly or called through `downstreamgo` service.
 
