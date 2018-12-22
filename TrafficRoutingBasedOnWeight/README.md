@@ -1,4 +1,4 @@
-This sample illustrates the traffic control mechanism in Istio
+# This sample illustrates the weighted traffic control mechanism in Istio
 
 1. Deploy the upstream node service using the below command.
 ```
