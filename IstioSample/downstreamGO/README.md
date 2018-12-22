@@ -1,4 +1,4 @@
-# The steps to deploy the downstream service running in GO runtime on GKE. 
+# The steps to deploy the downstream service running in GO-runtime on GKE. 
 
 This service makes a call to downstream service running in Nodejs. For more information about the upstream service navigate to the `upstreamNode` directory in this repository.
 
