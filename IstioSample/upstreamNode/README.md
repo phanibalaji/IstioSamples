@@ -5,7 +5,7 @@ The steps to deploy the upstream service running in Nodejs runtime on GKE.
 
 2. The docker image is already built and uploaded to phanibalaji/istio-sample-images at 
    `https://cloud.docker.com/repository/registry-1.docker.io/phanibalaji/istio-sample-images`
-    Otherwise, if you want to build the image by yourself follow the steps in the section *Steps to build upstream node image* and comeback after completing all the steps.
+    Otherwise, if you want to build the image by yourself follow the steps in the section __Steps to build upstream node image__ and comeback after completing all the steps.
 
 3. Run the below command to deploy the `upstreamnode-v1` POD, associated service and detsinationRule.
    ```
