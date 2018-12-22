@@ -1,4 +1,4 @@
-The steps to deploy the upstream service running in Nodejs runtime on GKE. 
+# The steps to deploy the upstream service running in Nodejs runtime on GKE. 
 
 1. Create a K8S cluster along with istio-beta. Select strict-MTLS for the security.
    `https://cloud.google.com/istio/docs/istio-on-gke/installing`
