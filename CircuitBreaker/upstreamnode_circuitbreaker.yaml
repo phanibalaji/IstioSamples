@@ -1,0 +1,57 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: upstreamnode
+  labels:
+    app: upstreamnode
+spec:
+  ports:
+  - port: 8080
+    name: http
+  selector:
+    app: upstreamnode
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: upstreamnode-v1
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: upstreamnode
+        version: v1
+    spec:
+      containers:
+      - name: upstreamnode
+        image: phanibalaji/istio-sample-images:upstream-node-v1
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8080
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: DestinationRule
+metadata:
+  name: upstreamnode
+spec:
+  host: upstreamnode
+  trafficPolicy:
+    tls:
+      mode: ISTIO_MUTUAL
+    connectionPool:
+      http:
+        http1MaxPendingRequests: 1
+        maxRequestsPerConnection: 1
+      tcp:
+        maxConnections: 1
+    outlierDetection:
+      baseEjectionTime: 180.000s
+      consecutiveErrors: 1
+      interval: 1.000s
+      maxEjectionPercent: 100
+  subsets:
+  - name: v1
+    labels:
+      version: v1
+---
