@@ -6,4 +6,4 @@ The below diagram explains the flow
 
 ![Service Interaction](https://github.com/phanibalaji/AnchorSamples/blob/master/SimpleEnvoy/Diagram.png)
 
-This sample does NOT use ISTIO (or) K8S. It uses just Docker demonstrate how static envoy looks with a sample static configuration
+This sample does NOT use ISTIO (or) K8S. It uses just Docker to demonstrate how static envoy looks with a sample static configuration
