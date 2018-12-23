@@ -1,3 +1,3 @@
 The application architecture looks as below
 
-![Service Interaction](https://github.com/phanibalaji/AnchorSamples/blob/master/IstioSample/diagram.png)
+![Service Interaction](https://github.com/phanibalaji/IstioSamples/blob/master/StandaloneSimpleEnvoy/Diagram.png)
