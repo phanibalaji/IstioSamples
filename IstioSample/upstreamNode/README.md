@@ -1,10 +1,10 @@
 # Deploy Node service
 
-#  Prerequisites 
+##  Prerequisites 
 
 1. GKE cluster along with Istio is installed. Check the `IstioSample` directory for instructions.
 
-# Instructions to deploy Node service on Istio
+## Instructions to deploy Node service on Istio
 
 1. Run the below command to deploy the `upstreamnode-v1` pod, associated service and detsinationRule.
 ```

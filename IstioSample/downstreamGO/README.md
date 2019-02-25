@@ -1,10 +1,10 @@
 # Deploy Go service which makes calls to Node service.
 
-#  Prerequisites 
+##  Prerequisites 
 
 1. GKE cluster along with Istio is installed. Check the `IstioSample` directory for instructions.
 
-# Instructions to deploy GO service on Istio
+## Instructions to deploy GO service on Istio
 
 1. Run the below command to deploy the `downstreamgo-v1` pod and service. Make sure that Node service already installed. Check the directory `upstreamNode` for instructions.
 ```
