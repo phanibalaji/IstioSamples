@@ -27,6 +27,7 @@ kubectl get pods sleep-7ffd5cc988-6ldh2 -o jsonpath='{.spec.containers[*].name}'
 4. Test the downstream Node service using the below command.
 ```
 kubectl exec -it sleep-7ffd5cc988-6ldh2 -- curl http://downstreamgo:8080/downstreamGo && echo ""
+
 Defaulting container name to sleep.
 Use 'kubectl describe pod/sleep-7ffd5cc988-6ldh2 -n default' to see all of the containers in this pod.
 {"Message":"Hello from Upstream Nodejs service","version":"1","Time":"2018-12-19T11:58:28.375Z","IP":"10.16.0.16"}
