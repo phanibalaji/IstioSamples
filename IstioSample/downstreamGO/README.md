@@ -16,7 +16,7 @@ kubectl apply -f downstreamGo.yaml
 kubectl -f apply <istio_unzipped_dir>/istio-1.0.6/samples/sleep/sleep.yaml
 ```
 
-3. Run the following command to list the containers of the pods
+3. Run the following commands to list the containers of the pods
 ```
 kubectl get namespace default -o yaml
 kubectl get pods -n default
