@@ -26,7 +26,7 @@ kubectl get pods sleep-7ffd5cc988-6ldh2 -o jsonpath='{.spec.containers[*].name}'
 
 4. Test the upstream Node service using the below command
 ```
-kubectl exec -it sleep-7ffd5cc988-6ldh2 -- curl http://upstreamnode:8080/upstreamNode  
+kubectl exec -it sleep-7ffd5cc988-6ldh2 -- curl http://upstreamnode:8080/upstreamNode && echo ""
 
 Defaulting container name to sleep.
 Use 'kubectl describe pod/sleep-7ffd5cc988-6ldh2 -n default' to see all of the containers in this pod.
