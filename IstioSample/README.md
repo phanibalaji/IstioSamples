@@ -22,41 +22,45 @@ gcloud config set project apigeeopdksupport-155404
 gcloud config set compute/zone asia-northeast1-a
 ```
 
-4. Create the GKE Cluster using the below command
+## Create GKE Cluster and configure
+
+1. Create the GKE Cluster using the below command
 ```
 gcloud container clusters create phani-cluster-1 --machine-type=n1-standard-1 --num-nodes=4 
 ```
 
-5. Verify that cluster is created successfully 
+2. Verify that cluster is created successfully 
 ```
 kubectl get nodes
 ```
 
-6. Run the below commands to get credentials and to provide admin permissions to the user
+3. Run the below commands to get credentials and to provide admin permissions to the user
 ```
 gcloud container clusters get-credentials phani-cluster-1 
 
 kubectl create clusterrolebinding cluster-admin-binding --clusterrole=cluster-admin --user=$(gcloud config get-value core/account)
 ```
 
-7. Download istio from the location https://github.com/istio/istio/releases. Download and unzip the files.
+## Install istio and verify 
+
+1. Download istio from the location https://github.com/istio/istio/releases. Download and unzip the files.
 ```
 https://github.com/istio/istio/releases/download/1.0.6/istio-1.0.6-osx.tar.gz
 ```
 
-8. Install istio using the below command
+2. Install istio using the below command
 ```
 cd istio-1.0.6
 kubectl apply -f install/kubernetes/istio-demo-auth.yaml
 ```
 
-9. Verify that Istio pods are installed
+3. Verify that Istio pods are installed
 ```
 kubectl get service -n istio-system
 kubectl get pods -n istio-system
 ```
 
-10. Enable automatic injection of pods to `default` namespace
+4. Enable automatic injection of pods to `default` namespace
 ```
 kubectl label namespace default istio-injection=enabled
 kubectl get namespace default -o yaml
