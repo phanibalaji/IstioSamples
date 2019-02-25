@@ -17,12 +17,12 @@ kubectl -f apply <istio_unzipped_dir>/istio-1.0.6/samples/sleep/sleep.yaml
 ```
 
 5. Run the following command to list the containers of the pods
-   ```
-   kubectl get namespace default -o yaml
-   kubectl get pods -n default
-   kubectl get pods downstreamgo-v1-d8847485-9g84w -o jsonpath='{.spec.containers[*].name}' && echo ""
-   kubectl get pods sleep-7ffd5cc988-6ldh2 -o jsonpath='{.spec.containers[*].name}' && echo ""
-   ```
+```
+kubectl get namespace default -o yaml
+kubectl get pods -n default
+kubectl get pods downstreamgo-v1-d8847485-9g84w -o jsonpath='{.spec.containers[*].name}' && echo ""
+kubectl get pods sleep-7ffd5cc988-6ldh2 -o jsonpath='{.spec.containers[*].name}' && echo ""
+```
 
 5. Test the downstream Node service using the below command.
 ```
