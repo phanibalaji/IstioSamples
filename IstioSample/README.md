@@ -65,3 +65,18 @@ kubectl get pods -n istio-system
 kubectl label namespace default istio-injection=enabled
 kubectl get namespace default -o yaml
 ```
+
+## Viewing logs of istio components 
+
+1. Obtain the ControlZ port of the istio component using the below command. We can connect to any istio component like `pilot`, `policy` or `telemetry` etc.
+```
+kubectl logs istio-pilot-878499dd5-689pt -c discovery -n istio-system | grep ControlZ
+
+2019-02-25T06:16:57.922416Z	info	ControlZ available at 10.40.0.9:9876
+```
+
+2. Use the port forward to connect to ControlZ using the below command and then open the browser and point to `http://localhost:9876`
+```
+kubectl port-forward pods/istio-pilot-878499dd5-689pt  -n istio-system 9876:9876
+``` 
+

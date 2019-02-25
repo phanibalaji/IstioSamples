@@ -32,3 +32,16 @@ Defaulting container name to sleep.
 Use 'kubectl describe pod/sleep-7ffd5cc988-6ldh2 -n default' to see all of the containers in this pod.
 {"Message":"Hello from Upstream Nodejs service","version":"1","Time":"2018-12-19T09:47:12.749Z","IP":"10.16.1.9"}
 ```
+
+5. View the individual container logs using the below commands
+```
+kubectl logs upstreamnode-v1-65bf9d4c5d-87bb6 -c upstreamnode
+kubectl logs upstreamnode-v1-65bf9d4c5d-87bb6 -c istio-proxy
+```
+
+6. View the cluster/listener info from the upstreamnode pod using the below command
+```
+istioctl proxy-config cluster upstreamnode-v1-65bf9d4c5d-87bb6
+istioctl proxy-config listener upstreamnode-v1-65bf9d4c5d-87bb6
+
+```
