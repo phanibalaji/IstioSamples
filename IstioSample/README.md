@@ -1,6 +1,6 @@
 # Application architecture 
 
-![Service Interaction](https://github.com/phanibalaji/IstioSamples/blob/master/StandaloneSimpleEnvoy/Diagram.png)
+![Service Interaction](https://github.com/phanibalaji/IstioSamples/blob/master/IstioSample/diagram.png)
 
 # Install ISTIO on GKE cluster
 
