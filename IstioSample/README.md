@@ -18,7 +18,7 @@ gcloud components install kubectl
 
 3. Configure the project and zone for `gcloud`
 ```
-gcloud config set project apigeeopdksupport-155404
+gcloud config set project <project_id>
 gcloud config set compute/zone asia-northeast1-a
 ```
 
